@@ -1,0 +1,3 @@
+class FactorReader {
+  function readAuthParameters();
+}
