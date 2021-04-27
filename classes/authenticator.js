@@ -1,9 +1,9 @@
 class Authenticator {
-  function authenticate(authRawData) {
+  authenticate(authRawData) {
     throw new Error("You shouldn't call methods from 'abstract' class");
   }
 
-  function changeSource(newIdealValue) {
+  changeSource(newIdealValue) {
     throw new Error("You shouldn't call methods from 'abstract' class");
   }
 }

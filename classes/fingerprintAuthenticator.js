@@ -1,4 +1,4 @@
-let Authenticator = require('authenticator.js')
+let Authenticator = require('./authenticator.js')
 
 class FingerprintAuthenticator extends Authenticator {
   _idealValue;
@@ -9,7 +9,7 @@ class FingerprintAuthenticator extends Authenticator {
                   [0x77, 0x88, 0x99]];
   }
 
-  function authenticate(authRawData) {
+  authenticate(authRawData) {
     let isIdentical = true;
     for (let i = 0; i < _idealValue.length; i++) {
       for (let j = 0; j < _idealValue[i].length; j++) {
@@ -19,7 +19,7 @@ class FingerprintAuthenticator extends Authenticator {
     return isIdentical;
   }
 
-  function changeSource(newIdealValue) {
+  changeSource(newIdealValue) {
     _idealValue = newIdealValue;
   }
 }

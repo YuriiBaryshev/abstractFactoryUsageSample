@@ -1,5 +1,5 @@
 class FactorReader {
-  function readAuthParameters() {
+  readAuthParameters() {
     throw new Error("You shouldn't call methods from 'abstract' class");
   }
 }

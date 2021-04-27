@@ -1,4 +1,4 @@
-let Authenticator = require('authenticator.js')
+let Authenticator = require('./authenticator.js')
 
 class PasswordAuthenticator extends Authenticator {
   _idealValue;
@@ -7,11 +7,11 @@ class PasswordAuthenticator extends Authenticator {
     _idealValue = '1234567890';
   }
 
-  function authenticate(authRawData) {
+  authenticate(authRawData) {
     return _idealValue == authRawData;
   }
 
-  function changeSource(newIdealValue) {
+  changeSource(newIdealValue) {
     _idealValue = newIdealValue;
   }
 }
