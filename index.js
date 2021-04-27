@@ -1,3 +1,7 @@
+let PasswordReader = require('./classes/passwordReader.js');
+let PasswordAuthenticator = require('./classes/passwordAuthenticator.js');
+let FingerprintReader = require('./classes/fingerprintReader.js');
+let FingerprintAuthenticator = require('./classes/fingerprintAuthenticator.js');
 
 let authenticationType = {
   PASSWORD : "password",
@@ -37,11 +41,11 @@ class AbstractFactory {
     switch (_authType) {
       case authenticationType.PASSWORD:
         output.reader = new PasswordReader();
-        //output.authenticator = new  PasswordAuthenticator()
+        output.authenticator = new  PasswordAuthenticator()
         break;
       case authenticationType.FINGERPRINT:
         output.reader = new FingerprintReader();
-        //output.authenticator = new  FingerprintAuthenticator()
+        output.authenticator = new  FingerprintAuthenticator()
         break;
       default:
         throw new Error("Unsupported authentication type");
