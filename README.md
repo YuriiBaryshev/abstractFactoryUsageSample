@@ -1,4 +1,4 @@
-# abstractFactoryUsageSample
+# Abstract Factory Usage Sample
 
 Educational project ot demonstrate abstract factory pattern usage.
 This code implements abstract factory, which helps to create two objects:
