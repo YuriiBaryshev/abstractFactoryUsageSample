@@ -15,3 +15,5 @@ class PasswordAuthenticator extends Authenticator {
     _idealValue = newIdealValue;
   }
 }
+
+module.exports = PasswordAuthenticator

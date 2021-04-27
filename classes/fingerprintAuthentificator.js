@@ -23,3 +23,5 @@ class FingerprintAuthenticator extends Authenticator {
     _idealValue = newIdealValue;
   }
 }
+
+module.exports = FingerprintAuthenticator
