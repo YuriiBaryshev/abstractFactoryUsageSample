@@ -5,13 +5,13 @@ let authenticationType = {
 }
 
 class AbstractFactory {
-  let _authType;
+  _authType;
 
   constructor() {
     _authType = authenticationType.PASSWORD;
   }
 
-  setter authType(newType) {
+  set authType(newType) {
     switch (newType) {
       case authenticationType.PASSWORD:
         _authType = authenticationType.PASSWORD
@@ -22,9 +22,32 @@ class AbstractFactory {
       default:
         throw new Error("Unsupported authentication type");
     }
+  }
 
-  getter authType() {
+  get authType() {
     return _authType;
+  }
+
+  createAuthObjects() {
+    let output = {
+      reader: {},
+      authenticator: {},
+    }
+
+    switch (_authType) {
+      case authenticationType.PASSWORD:
+        output.reader = new PasswordReader();
+        //output.authenticator = new  PasswordAuthenticator()
+        break;
+      case authenticationType.FINGERPRINT:
+        output.reader = new FingerprintReader();
+        //output.authenticator = new  FingerprintAuthenticator()
+        break;
+      default:
+        throw new Error("Unsupported authentication type");
+    }
+
+    return output;
   }
 }
 
