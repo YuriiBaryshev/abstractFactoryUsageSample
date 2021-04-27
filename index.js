@@ -12,16 +12,16 @@ class AbstractFactory {
   _authType;
 
   constructor() {
-    _authType = authenticationType.PASSWORD;
+    this._authType = authenticationType.PASSWORD;
   }
 
   set authType(newType) {
     switch (newType) {
       case authenticationType.PASSWORD:
-        _authType = authenticationType.PASSWORD
+        this._authType = authenticationType.PASSWORD
         break;
       case authenticationType.FINGERPRINT:
-        _authType = authenticationType.FINGERPRINT
+        this._authType = authenticationType.FINGERPRINT
         break;
       default:
         throw new Error("Unsupported authentication type");
@@ -29,7 +29,7 @@ class AbstractFactory {
   }
 
   get authType() {
-    return _authType;
+    return this._authType;
   }
 
   createAuthObjects() {
@@ -38,7 +38,7 @@ class AbstractFactory {
       authenticator: {},
     }
 
-    switch (_authType) {
+    switch (this._authType) {
       case authenticationType.PASSWORD:
         output.reader = new PasswordReader();
         output.authenticator = new  PasswordAuthenticator()

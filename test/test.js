@@ -1,4 +1,4 @@
-let abstractFactory = require('../index.js');
+let AbstractFactory = require('../index.js');
 let assert = require('chai').assert;
 
 describe('Abstract Fabric pattern demonstration', function() {
