@@ -2,12 +2,12 @@ import {FactorReader} from "./src/FactorReader";
 import {Authenticator} from "./src/Authenticator";
 import {PasswordReader} from "./src/PasswordReader";
 import {PasswordAuthenticator} from "./src/PasswordAuthenticator";
-import {FingerprintReader, FingerPrint} from "./src/FingerprintReader";
+import {FingerprintReader, Fingerprint} from "./src/FingerprintReader";
 import {FingerprintAuthenticator} from "./src/FingerprintAuthenticator";
 
 export type AuthPair = {
-    reader: FactorReader<string | FingerPrint>,
-    authenticator: Authenticator<string | FingerPrint>
+    reader: FactorReader<string | Fingerprint>,
+    authenticator: Authenticator<string | Fingerprint>
 };
 
 export enum AuthType {
