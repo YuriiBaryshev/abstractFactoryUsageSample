@@ -1,4 +1,4 @@
-name: Demonstration CI
+name: CI autotests
 
 on:
   push:
